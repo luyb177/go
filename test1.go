@@ -72,7 +72,10 @@
 // }
 package main
 
-import "fmt"
+// import (
+// 	"fmt"
+// 	"time"
+// )
 
 // func main() {
 // 	c := 'A'
@@ -185,24 +188,64 @@ import "fmt"
 //     return fun
 // }
 
-func main() {
-	s := [10]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
-	s1 := s[:0]
-	fmt.Println(s1)
-	s2 := s[:5]
-	fmt.Println("s2", "len", len(s2), "cap", cap(s2))
-	s3 := s[1:5]
-	s4 := s[2:5]
-	s5 := s[3:5]
-	fmt.Println("s3", "len", len(s3), "cap", cap(s3))
-	fmt.Println("s4", "len", len(s4), "cap", cap(s4))
-	fmt.Println("s5", "len", len(s5), "cap", cap(s5))
-	fmt.Printf("%p\n", s1)
-	fmt.Printf("%p\n", s2)
-	fmt.Printf("%p\n", &s[1])//开辟的新数组的地址与s[i]相同
+// func main() {
+// 	s := [10]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+// 	s1 := s[:0]
+// 	fmt.Println(s1)
+// 	s2 := s[:5]
+// 	fmt.Println("s2", "len", len(s2), "cap", cap(s2))
+// 	s3 := s[1:5]
+// 	s4 := s[2:5]
+// 	s5 := s[3:5]
+// 	fmt.Println("s3", "len", len(s3), "cap", cap(s3))
+// 	fmt.Println("s4", "len", len(s4), "cap", cap(s4))
+// 	fmt.Println("s5", "len", len(s5), "cap", cap(s5))
+// 	fmt.Printf("%p\n", s1)
+// 	fmt.Printf("%p\n", s2)
+// 	fmt.Printf("%p\n", &s[1])//开辟的新数组的地址与s[i]相同
 
-	fmt.Printf("%p\n", s3)
-	fmt.Printf("%p\n", s4)
-	fmt.Printf("%p\n", s5)
+// 	fmt.Printf("%p\n", s3)
+// 	fmt.Printf("%p\n", s4)
+// 	fmt.Printf("%p\n", s5)
 
-}
+// }
+//
+//	func main(){
+//	    book1 := map[string]string{
+//	        "name":"c语言",
+//	        "addr":"第一层",
+//	    }
+//	    book2 := map[string]string{
+//	        "name":"go语言",
+//	        "addr":"第二层",
+//	    }
+//	    s1 := make([]map[string]string,0,2) //包含长度
+//	    s1 = append(s1, book1)
+//	    s1 = append(s1, book2)
+//	    for i,v := range s1{
+//	        fmt.Println(i,v)
+//	    }
+//	}
+// var ticket = 10
+
+// func main() {
+// 	go sale("zhangsan")
+// 	go sale("wangwu")
+// 	go sale("lisi")
+// 	go sale("xiaowang")
+
+// 	time.Sleep(time.Second * 5)
+
+// }
+// func sale(name string) {
+// 	for {
+// 		if ticket > 0 {
+// 			ticket--
+// 			fmt.Println(name, "剩余得票数", ticket)
+
+// 		} else {
+// 			fmt.Println("票已售空")
+// 			break
+// 		}
+// 	}
+// }
