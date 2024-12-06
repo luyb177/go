@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录页面</title>
+</head>
+<body>
+    <h3>用户登录</h3>
+    <form action="/auth2" method="post">
+        <fieldset>
+            <legend>请输入您的登录信息：</legend>
+            <label for="username">用户名:</label>
+            <input type="text" id="username" name="username" placeholder="请输入用户名" required>
+            <br><br>
+            <label for="password">密码:</label>
+            <input type="password" id="password" name="password" placeholder="请输入密码" required>
+            <br><br>
+            <input type="submit" value="登录">
+        </fieldset>
+    </form>
+    <h4>修改密码</h4>
+    <form action="/alter" method="GET">
+        <input type="submit" value="修改密码">
+    </form>
+    </form>
+        <h4>查询用户</h4>
+    <form action="/inquire" method="GET">
+        <input type="submit" value="查询用户">
+    </form>
+    </form>
+        <h4>秘密通道</h4>
+    <form action="/mimi" method="GET">
+        <input type="submit" value="秘密通道">
+    </form>
+</body>
+</html>

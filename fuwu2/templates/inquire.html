@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>查询用户</title>
+</head>
+<body>
+    <h3>查询用户</h3>
+    <form action="/inquire" method="post">
+        <fieldset>
+            <legend>请输入您的用户名和密码：</legend>
+            <label for="username">用户名:</label>
+            <input type="text" id="username" name="username" placeholder="请输入用户名" required>
+            <br><br>
+            <label for="password">密码:</label>
+            <input type="password" id="password" name="password" placeholder="请输入密码" required>
+            <br><br>
+            <input type="submit" value="确认查询">
+        </fieldset>
+    </form>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改密码</title>
+</head>
+<body>
+    <h3>修改密码</h3>
+    <form action="/alter" method="post">
+        <fieldset>
+            <legend>请输入您的用户名和原密码：</legend>
+            <label for="username">用户名:</label>
+            <input type="text" id="username" name="username" placeholder="请输入用户名" required>
+            <br><br>
+            <label for="password">原密码:</label>
+            <input type="password" id="password" name="password" placeholder="请输入原密码" required>
+            <br><br>
+            <label for="password">新密码:</label>
+            <input type="password" id="password" name="password_new" placeholder="请输入新密码" required>
+            <br><br>
+            <input type="submit" value="确认修改">
+        </fieldset>
+    </form>
+</body>
+</html>
