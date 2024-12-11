@@ -1,0 +1,443 @@
+basePath: /user
+host: 127.0.0.1:8080
+info:
+  contact: {}
+  title: 图书管理系统
+  version: "1.0"
+paths:
+  /:
+    get:
+      consumes:
+      - application/json
+      description: 用户可以与前端交互选择进入管理员页面或者用户页面
+      produces:
+      - text/html
+      responses:
+        "200":
+          description: 首页
+          schema:
+            type: string
+      summary: 首页
+      tags:
+      - page
+  /admin/add:
+    get:
+      consumes:
+      - application/json
+      description: 管理员通过书名、索引号、作者添加书本
+      produces:
+      - text/html
+      responses:
+        "200":
+          description: 获取添加页面成功
+          schema:
+            type: string
+      summary: 管理员添加书籍
+      tags:
+      - page
+    post:
+      consumes:
+      - application/json
+      description: 管理员通过书名、索引号、作者进行添加
+      parameters:
+      - description: 书名
+        in: body
+        name: bookName
+        required: true
+        schema:
+          type: string
+      - description: 作者
+        in: body
+        name: author
+        required: true
+        schema:
+          type: string
+      - description: 索引号
+        in: body
+        name: Pid
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 添加成功返回json消息
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: 添加失败返回失败消息
+          schema:
+            additionalProperties: true
+            type: object
+      summary: 管理员添加书籍
+      tags:
+      - admin
+  /admin/delete:
+    get:
+      consumes:
+      - application/json
+      description: 管理员通过书名删除书本
+      produces:
+      - text/html
+      responses:
+        "200":
+          description: 获取删除页面成功
+          schema:
+            type: string
+      summary: 管理员删除书籍
+      tags:
+      - page
+    post:
+      consumes:
+      - application/json
+      description: 管理员通过书名进行删除
+      parameters:
+      - description: 书名
+        in: body
+        name: bookName
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 删除成功返回json消息
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: 删除失败返回json消息
+          schema:
+            additionalProperties: true
+            type: object
+      summary: 管理员删除书籍
+      tags:
+      - admin
+  /admin/insert:
+    get:
+      consumes:
+      - application/json
+      description: 管理员通过书名查询书本
+      produces:
+      - text/html
+      responses:
+        "200":
+          description: 获取查询页面成功
+          schema:
+            type: string
+      summary: 管理员查询书
+      tags:
+      - page
+    post:
+      consumes:
+      - application/json
+      description: 管理员通过书名进行查询
+      parameters:
+      - description: 书名
+        in: body
+        name: booName
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      - text/html
+      responses:
+        "200":
+          description: 查询成功返回json消息
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: 查询失败返回json消息
+          schema:
+            additionalProperties: true
+            type: object
+      summary: 管理员查询
+      tags:
+      - admin
+  /admin/login:
+    get:
+      consumes:
+      - application/json
+      description: 管理员获取登录页面
+      produces:
+      - text/html
+      responses:
+        "200":
+          description: 登录页面
+          schema:
+            type: string
+      summary: 管理员登录
+      tags:
+      - page
+    post:
+      consumes:
+      - application/json
+      description: 管理员通过用户名和密码进行登录
+      parameters:
+      - description: 用户名
+        in: body
+        name: username
+        required: true
+        schema:
+          type: string
+      - description: 密码
+        in: body
+        name: password
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 登陆成功返回json消息
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: 登录失败返回json消息
+          schema:
+            additionalProperties: true
+            type: object
+      summary: 管理员登录
+      tags:
+      - admin
+  /admin/register:
+    get:
+      consumes:
+      - application/json
+      description: 管理员获取注册页面
+      produces:
+      - text/html
+      responses:
+        "200":
+          description: 获取注册页面
+          schema:
+            type: string
+      summary: 管理员注册
+      tags:
+      - page
+    post:
+      consumes:
+      - application/json
+      description: 管理员通过用户名和密码进行注册
+      parameters:
+      - description: 用户名
+        in: body
+        name: username
+        required: true
+        schema:
+          type: string
+      - description: 密码
+        in: body
+        name: password
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 注册成功返回Json消息
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: 注册失败返回json消息
+          schema:
+            additionalProperties: true
+            type: object
+      summary: 管理员注册
+      tags:
+      - admin
+  /admin/update:
+    get:
+      consumes:
+      - application/json
+      description: 管理员通过书名更新书本
+      produces:
+      - text/html
+      responses:
+        "200":
+          description: 获取更新页面成功
+          schema:
+            type: string
+      summary: 管理员更新书籍
+      tags:
+      - page
+    post:
+      consumes:
+      - application/json
+      description: 管理员通过书名进行更新
+      parameters:
+      - description: 旧书名
+        in: body
+        name: BbookName
+        required: true
+        schema:
+          type: string
+      - description: 新书名
+        in: body
+        name: AbookName
+        required: true
+        schema:
+          type: string
+      - description: 作者
+        in: body
+        name: Author
+        required: true
+        schema:
+          type: string
+      - description: 索引号
+        in: body
+        name: Pid
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      - text/html
+      responses:
+        "200":
+          description: 更新成功返回书本的信息
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: 更新失败返回失败的消息
+          schema:
+            additionalProperties: true
+            type: object
+      summary: 管理员更新书籍信息
+      tags:
+      - admin
+  /user/insert:
+    get:
+      consumes:
+      - application/json
+      description: 用户通过书名查询书本
+      produces:
+      - text/html
+      responses:
+        "200":
+          description: 获取查询页面成功
+          schema:
+            type: string
+      summary: 用户查询书籍页面
+      tags:
+      - page
+    post:
+      consumes:
+      - application/json
+      description: 用户通过书名查询书籍信息
+      parameters:
+      - description: 书名
+        in: body
+        name: bookName
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 查询成功返回书本信息
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: 查询失败
+          schema:
+            additionalProperties: true
+            type: object
+      summary: 用户查询书籍
+      tags:
+      - user
+  /user/login:
+    post:
+      consumes:
+      - application/json
+      description: 用户通过用户名和密码进行登录
+      parameters:
+      - description: 用户名
+        in: body
+        name: username
+        required: true
+        schema:
+          type: string
+      - description: 密码
+        in: body
+        name: password
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 登陆成功返回json消息包含token
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: 登录失败返回json消息
+          schema:
+            additionalProperties: true
+            type: object
+      summary: 用户登录
+      tags:
+      - user
+  /user/register:
+    get:
+      consumes:
+      - application/json
+      description: 用户获取注册页面
+      produces:
+      - text/html
+      responses:
+        "200":
+          description: 获取注册页面
+          schema:
+            type: string
+      summary: 用户注册
+      tags:
+      - page
+    post:
+      consumes:
+      - application/json
+      description: 用户通过用户名和密码进行注册
+      parameters:
+      - description: 用户名
+        in: body
+        name: username
+        required: true
+        schema:
+          type: string
+      - description: 密码
+        in: body
+        name: password
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 注册成功返回json消息
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: 注册失败返回json消息
+          schema:
+            additionalProperties: true
+            type: object
+      summary: 用户注册
+      tags:
+      - user
+swagger: "2.0"
